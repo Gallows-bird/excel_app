@@ -1,4 +1,4 @@
-import {$} from '@core/Dom';
+import {$} from '@core/Dom'
 
 export function resizeHandler($root, event) {
   return new Promise(resolve => {
@@ -13,7 +13,6 @@ export function resizeHandler($root, event) {
       opacity: 1,
       [sideProp]: '-5000px'
     })
-
 
     document.onmousemove = e => {
       if (type === 'col') {
@@ -33,7 +32,8 @@ export function resizeHandler($root, event) {
 
       if (type === 'col') {
         $parent.css({width: value + 'px'})
-        $root.findAll(`[data-col="${$parent.data.col}"]`).forEach(el => el.style.width = value + 'px')
+        $root.findAll(`[data-col="${$parent.data.col}"]`)
+            .forEach(el => el.style.width = value + 'px')
       } else {
         $parent.css({height: value + 'px'})
       }
